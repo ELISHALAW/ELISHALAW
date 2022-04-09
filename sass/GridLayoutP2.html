@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./main.css" rel="stylesheet" >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <title>GridLayoutP2</title>
+    <style>
+        section
+        {
+            padding:60px 0;
+        }
+            /* When you are using bootstrap you gonna type something like this aria-controls and aria-expanded these are the benefit for the screen readers and they can understand a little fot the structure of the webpage */
+            /* The global aria-controls property identifies the element (or elements) whose contents or presence are controlled by the element on which this attribute is set */
+            /* The aria-expanded attribute is set on an element to indicate if a control is expanded or collapsed, and whether or its child elements are displayed or hidden  */
+            /* Definition. aria-label is an attribute defined in the WAI-ARIA(opens in a new tabs) specification */
+            /* The ms is aboout margin start */
+            /* d-none is mean the smaller screen its does not apppear anything  */
+            /* The CSS justify-content property defines how the browser distributes space-between and around content items along the main-axis of a flex container, and the inline axis of a grid container */
+            /* The accordion is a graphical control element comprising a vertically stacked list of items, such as labels or thumbnails.Each items can be expanded or collapsed to reveal the content associated with that items  */
+            /* data-bs-toggle="collapse" is mean the behavior of this button is gonna do */
+            /* The function of the show it show the webpage I think XD */
+            /* data-bs-toggle="collapse" is mean can make the button can be openend and its the sentence below the button will appear when user click on it  */
+            /* uncollapsed is mean the page can be opened when we click on the button */
+            /* d-none is mean the page will not show it d is mean display and d-none is mean will not display */
+            /* inline is mean the inside of the blog  */
+            /* d-md-inline is mean the code become the blog */
+            /* col-lg-8 is mean it will become a full weight when comes to large screen */
+            /* col is mean column */
+            /* In order to create a list group with linked items, we have to use tag <div> instead of tag <ul> and tag <a> instead of <li> */
+            /* Active class can be used to highlight the current item. */
+            /* list-group-flush is used to remove some borders and rounded corners to render list-group items edge-to-edge in a parent container */
+            /* The list-group-horizontal class is list-group list-group-horizontal */
+            /* The badges will automatically be positioned on the right */
+            /* By adding disabled to a .list-group-items can make the content appear disabled */
+            /* <ul class="list-group">
+            <li class="list-group-item list-group-item-warning">ITEM</li>
+            <li class="list-group-item list-group-item-success">ITEM</li>
+            <li class="list-group-item list-group-item-info">ITEM</li>
+            <li class="list-group-item list-group-item-danger">ITEM</li>
+            </ul> */
+            /* Bootstrap Icons : Free,high quality, open source icon library with over 1,300 icons. Include them anyway you like- SVGs, SVG sprite, or web fonts.Use them with or without Bootstrap in any project */
+            /* Froms: Examples and usage guidelines for form control styles, layout options and custom components for sreating a wide variety of forms */
+            /* pb is mean the padding to bottom */
+            /* col-lg-6 in form is mean the element inside this is gonna take 6 columns of width for large screen but before from extra small to large it's gonna be full width  is mean 12 columns */
+            /* id of the input field associated with this label  */
+            /* if you want the label to be inside of that textarea you gonna use the class="form-floating" */
+            /* Input group : Easily extend form controls by adding text, buttons or button groups on either side od textual inputs,custom selects and custom file inputs */
+            /* Gonna  create a class of input is mean input-group and input-group text */
+            /* What is the class name used to give textual form controls like inputs and textareas an upgrade with custom styles, sizing, focus states, and more? = form control */
+            /* tt is for the tooltip */
+            /*   <script>
+            const tooltips = document.querySelectorAll('.tt')
+            tooltips.forEach(t =>{
+            new bootstrap.Tooltip(t)
+            })
+            </script> */
+            /* The sentence that I just paste just now is for tooltip is for a:hover when we move our mouse to image and title of the image or the button will appear  */
+            /* The things that I need to remember is to put a class so that the tooltip will function */
+            /* This part is about modal and the another about modal is called pop-upsn normally see them on website (is for those user for signing up for some kind of email list) */
+            /* md is mean the medium of the size */
+            /* aria-hidden = true is mean it's not showing by default when we first come on the page */
+            /* btn-close this makes like a cross button for us in the modal and bootstrap automatically positions in the right place an */
+            /* data-bs-dismiss is mean what to dismiss when we click on this button right */
+            /* Form-controls enable accessibility by takking a uniform approach to such features as captions, help text, tabbing and keyboard shortcuts */
+            /* Data-bs-toggle: this attribute determines which element is going to be toggled */
+            /* data-bs-target:this attribute points to the modal the needs to be launched through providing the modal id attributes */
+            /* The modal : which is the triggered modal will be overviewed on next task */
+            /* tabindex: it takes the tab index when clicking through the page
+            fade: this is a class that will be added to the modal to give it the fade animation when opens and close
+            aria-labelledby: it takes the modal label the is going to show on the header
+            aria-hidden="true": when the value is true means the modal not showing by default */
+            /* modal-header: same as the name implies it contains the header elements like the title and the X icon the used to dismiss the modal and it that by passing an attribute data-bs-dismiss.
+            modal-body: this is the body of the modal that contains the text field, input fields and buttons, and so on of the interactive element.
+            modal-footer: same as the name implies it will contain the footer information and the action button such as Close or Submit buttons */
+            /* Offacanvas : build hidden sidebars into your project for navigation, shopping carts and more with a few classes and our Java Script plugin  */
+            /* Offcanvas hide content  */
+            /* tells the anchor to look for a particular id and we click on this it knows which id to open */
+            /* d-block to mean to dislpay this block becasue it default   */
+            /* data-bs-toggle="offcanvas so bootstrap knows what kind of functionality is going on when we click on this " */
+            /* the role button and aria-control is sidebar is telling screen readers we re controlling a sidebar with this button  */
+            /* the offcanvas-start is makes the  link or sentences appear on the left side  */
+            /* the tabindex -1 takes out of the tab index if you're tabbing the page */
+            /* id is to match what the link said  */
+            /* so screen readers knows the where the title is */
+            /* btn-close it appear the cross */
+            /* data-bs-dismiss it knows tp dismiss ot close the offcanvas and the aria-labelled is close */
+            /* The dropdown button is basically just a button which when we press shows a dropdown list of other options  */
+            /* THE dropdown-toggle is to make to list dropdown */
+
+        
+    </style>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md  navbar-light">
+        <div class="container-xxl">
+          <a href="#intro" class="navbar-brand">
+              <span class="fw-bold text-secondary">
+                <i class="bi bi-book-half"></i>
+                  Net Ninja Pro- The book
+              </span>
+          </a>
+          <!-- toggle button for mobile nav -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation" >
+              <span class="navbar-toggle-icon"></span>
+          </button>
+         </div> 
+
+          <!-- navbar links  -->
+          <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a href="#topics" class="nav-link">About the Book</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#reviews" class="nav-link">Reviews</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#contact" class="nav-link">Get in touch </a>
+                  </li>
+                  <li class="nav-item d-md-none">
+                      <a href="#pricing" class="nav-link">Pricing</a>
+                  </li>
+                  <li class="nav-item ms-2 d-none d-md-inline">
+                      <a href="#pricing" class="btn btn-secondary">Buy now </a>
+                  </li>
+              </ul>
+          </div>
+        
+     </nav>
+
+    <!-- main image & intro text  -->
+    <section id="intro">
+        <div class="container-lg">
+            <!-- md = medium -->
+            <!-- text muted = may be muted the style of the sentence and muted the style of the css -->
+
+            <div class="row justify-content-center align-items-center">      
+                <div class="col-md-5 text-center text-md-start">
+                    <h1>
+                        <div class="display-2">Black-Belt</div>
+                        <div class="display-5 text-muted">Your Coding Skill</div>
+                    </h1>
+                    <p class="lead my-4 text-muted">Lorem ipsum, dolor sit amet consectetur adispisicing elit</p>
+                    <a href="#pricing" class="btn btn-secondary btn-lg">Buy Now</a>
+                    <!-- open sidebar / Offcanvas -->
+                    <a href="#sidebar" class="d-block mt-3" data-bs-toggle="offcanvas" role="button" aria-control="sidebar">
+                        Explore my Story
+                    </a>
+                </div>
+                <div class="col-md-5 text-center d-none d-md-block">
+                    <!-- tooltip -->
+                    <span class="tt" data-bs-placement="bottom" title="Coding Skill of Front End Developer">
+                        <img class="img-fluid" src="architecture-gc3d726810_1920.jpg" alt="architexture">
+
+                    </span>
+                   
+                    <!-- img fluid = the img will change when the size of the screen is changed -->
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- pricing plans -->
+    <!-- col-8 is for the small screen and then large screen will have 4 columns and extra large will have 3 columns -->
+    <section id="pricing" class="bg-light mt-5 ">
+        <div class="container-lg">
+            <div class="text-center">
+                <h2>Pricing Plans</h2>
+                <p class="lead text-muted">Choose a pricing plan to suit you.</p>
+            </div>
+            <div class="row my-5 align-items-center justify-content-center g-0">
+                <div class="col-8 col-lg-4 col-xl-3">
+                    <div class="card border-0">
+                        <div class="card-body text-center py-4">
+                            <h4 class="card-title">Starter Edition</h4>
+                            <p class="lead card-subtitle">eBook download only</p>
+                            <p class="display-5 my-4 text-primary fw-bold">$12.99</p>
+                            <p class="card-text mx-5 text-muted d-nono d-lg-block">Lorem ipsum sit amet consectetur adispisicing elit.Mollitia, vitae magni! Repellat commodu a fuga corporis saepe dolorum</p>
+                            <a href="#" class="btn btn-outline-primary btn-lg mt-3">Buy Now </a>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Card header = Most popular and the function of the card header is to make Sentences or the phrase set it to center of the column -->
+                
+        <div class="col-9 col-lg-4">
+            <div class="card border-danger border-2">
+                <div class="card-header text-center text-danger">Most popular</div>
+                <div class="card-body text-center py-5">
+                    <h4 class="card-title">Complete Edition</h4>
+                    <p class="lead card-subtitle">eBook download & all updates</p>
+                    <p class="display-4 my-4 text-danger fw-bold">$18.99</p>
+                    <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum sit amet consectetur adispisicing elit.Mollitia, vitae magni! Repellat commodu a fuga corporis saepe dolorum</p>
+                    <a href="#" class="btn btn-outline-danger btn-lg mt-3">
+                        Buy now 
+                    </a>
+
+                
+                </div>
+            </div>
+        </div>
+
+    <div class="col-8 col-lg-4 col-xl-3">
+        <div class="card border-0">
+            <div class="card-body text-center py-4">
+                <h4 class="card-title">Ultimate Edition</h4>
+                <p class="lead card-subtitle">download,updates & extras</p>
+                <p class="display-5 my-4 text-danger fw-bold">$24.99</p>
+                <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adispiscing elit.Mollitias, vitae magni! Repellat commdi a fuga corporis saepe dolorum</p>
+                <a href="#" class="btn btn-outline-danger btn-lg mt-3">
+                    Buy Now 
+                </a>
+            </div>
+        </div>
+    </div>
+
+            
+     
+
+    </div>
+     
+
+    </section>
+
+
+
+    <!-- topic at a glance -->
+    <section id="topics">
+        <div class="container-md">
+            <div class="text-center">
+                <h2>Inside the Book...</h2>
+                <p class="lead text-muted">A quick glance at the topics you'll learn</p>
+            </div>
+            <div class="row my-5 g-5 justify-content-around align-items-center">
+                <div class="col-6 col-lg-4">
+                    <img src="galaxy.jpg" class="img-fluid" alt="Galaxy">
+                </div>
+                <div class="col-lg-6"></div>
+                <!-- accordion -->
+                <div class="accordion" id="chapters">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading-1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#chapter-1" aria-expanded="true" aria-controls="chapter-1">
+                                Chapter 1 - Your First Webpage
+                            </button>
+                        </h2>
+                        <div id="chapter-1"  class="accordion-collapse collapsed " aria-labelledby="heading-1" data-bs-parent="#chapters">
+                            <div class="accordion-body">
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita nobis voluptate quas laborum! Ipsa est impedit unde magni. Culpa magni explicabo temporibus autem, officia eligendi reiciendis reprehenderit excepturi ipsam maiores!</p>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae consectetur facilis quis eum nemo ad inventore! Accusamus, fugit distinctio placeat corporis perferendis repellat modi voluptates, quam nulla, commodi aspernatur error.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                
+                    <div class="accordion-item"  id="chapters">
+                        <h2 class="accordion-header" id="heading-2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#chapter-2" aria-expanded="false" aria-control="chapter-2">
+                                Chapter-2 Mastering CSS
+                            </button>
+                        </h2>    
+                            <div id="chapter-2"  class="accordion-collapse collapse  " aria-labelledby="heading-2" data-bs-parent="#chapters">
+                                <div class="accordion-body">
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita nobis voluptate quas laborum! Ipsa est impedit unde magni. Culpa magni explicabo temporibus autem, officia eligendi reiciendis reprehenderit excepturi ipsam maiores!</p>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae consectetur facilis quis eum nemo ad inventore! Accusamus, fugit distinctio placeat corporis perferendis repellat modi voluptates, quam nulla, commodi aspernatur error.</p>
+                                </div>
+    
+                            </div>
+                       
+
+                    </div>
+   
+                    <div class="accordion-item"  id="chapters">
+                        <h2 class="accordion-header" id="heading-3">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#chapter-3" aria-expanded="false" aria-control="chapter-3">
+                                Chapter 3 - The power of JavaScript
+                            </button>
+                        </h2>
+                     
+                        <div id="chapter-3"  class="accordion-collapse collapse  " aria-labelledby="heading-3" data-bs-parent="#chapters">
+                            <div class="accordion-body">
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita nobis voluptate quas laborum! Ipsa est impedit unde magni. Culpa magni explicabo temporibus autem, officia eligendi reiciendis reprehenderit excepturi ipsam maiores!</p>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae consectetur facilis quis eum nemo ad inventore! Accusamus, fugit distinctio placeat corporis perferendis repellat modi voluptates, quam nulla, commodi aspernatur error.</p>
+                            </div>
+
+                        </div>
+                      
+                    </div>
+                    <div class="accordion-item"  id="chapters">
+                        <h2 class="accordion-header" id="heading-4">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#chapter-4" aria-expanded="false" aria-control="chapter-4">
+                                Chapter 4 - Storing Data (Firebase Database)
+                            </button>
+                        </h2>
+                        
+                        <div id="chapter-4"  class="accordion-collapse collapse  " aria-labelledby="heading-4" data-bs-parent="#chapters">
+                            <div class="accordion-body">
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita nobis voluptate quas laborum! Ipsa est impedit unde magni. Culpa magni explicabo temporibus autem, officia eligendi reiciendis reprehenderit excepturi ipsam maiores!</p>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae consectetur facilis quis eum nemo ad inventore! Accusamus, fugit distinctio placeat corporis perferendis repellat modi voluptates, quam nulla, commodi aspernatur error.</p>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                    <div class="accordion-item"  id="chapters">
+                        <h2 class="accordion-header" id="heading-5">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#chapter-5" aria-expanded="false" aria-controls="chapter-5">
+                                Chapter 5 - User Authentication
+                            </button>
+                        </h2>    
+                       
+                        <div id="chapter-5"  class="accordion-collapse collapse  " aria-labelledby="heading-5" data-bs-parent="#chapters">
+                            <div class="accordion-body">
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita nobis voluptate quas laborum! Ipsa est impedit unde magni. Culpa magni explicabo temporibus autem, officia eligendi reiciendis reprehenderit excepturi ipsam maiores!</p>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae consectetur facilis quis eum nemo ad inventore! Accusamus, fugit distinctio placeat corporis perferendis repellat modi voluptates, quam nulla, commodi aspernatur error.</p>
+                            </div>
+
+                        </div>
+                      
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+
+
+    <!-- review list -->
+    <section id="reviews" class="bg-light">
+        <div class="container-lg">
+            <div class="text-center">
+                <h2><i class="bi bi-stars"></i>Front-End Developer</h2>
+                <p class="lead">My goal is to do what I Must</p>
+            </div>
+
+            <div class="row justify-content-center my-5">
+                <div class="col-lg-8">
+                    <div class="list-group">
+                      <div class="list-group-item py-3">
+                          <div class="pb-2">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                          </div>
+                          <h5 class="mb-1">I like ELISHA in the story of BIBLE</h5>
+                          <p class="mb-1">As a prophet,Elisha was political activist and revolutionary. He led a "holy war" that extinguished the house of Omri in Jerusalam as well  as in Samaria(2 Kings 9-10).Though Elisha recruited Jehu to revolt against and succeed Ahab, it was Elijah who ws instructed to anoint Jehu as Isreal's king</p>
+                          <small>The real story of Elisha in the history of  Isreal</small>
+                      </div>
+                      <div class="list-group-item py-3">
+                        <div class="pb-2">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                          </div>
+                        <h5 class="mb-1">I like ELISHA in the story of BIBLE</h5>
+                        <p class="mb-1">As a prophet,Elisha was political activist and revolutionary. He led a "holy war" that extinguished the house of Omri in Jerusalam as well  as in Samaria(2 Kings 9-10).Though Elisha recruited Jehu to revolt against and succeed Ahab, it was Elijah who ws instructed to anoint Jehu as Isreal's king</p>
+                        <small>The real story of Elisha in the history of  Isreal</small>
+                       </div>
+                       <div class="list-group-item py-3">
+                        <div class="pb-2">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                          </div>
+                        <h5 class="mb-1">I like ELISHA in the story of BIBLE</h5>
+                        <p class="mb-1">As a prophet,Elisha was political activist and revolutionary. He led a "holy war" that extinguished the house of Omri in Jerusalam as well  as in Samaria(2 Kings 9-10).Though Elisha recruited Jehu to revolt against and succeed Ahab, it was Elijah who ws instructed to anoint Jehu as Isreal's king</p>
+                        <small>The real story of Elisha in the history of  Isreal</small>
+                    </div>
+                    <div class="list-group-item py-3">
+                        <div class="pb-2">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                          </div>
+                        
+                        <h5 class="mb-1">I like ELISHA in the story of BIBLE</h5>
+                        <p class="mb-1">As a prophet,Elisha was political activist and revolutionary. He led a "holy war" that extinguished the house of Omri in Jerusalam as well  as in Samaria(2 Kings 9-10).Though Elisha recruited Jehu to revolt against and succeed Ahab, it was Elijah who ws instructed to anoint Jehu as Isreal's king</p>
+                        <small>The real story of Elisha in the history of  Isreal</small>
+                    </div>
+                    <div class="list-group-item py-3">
+                        <div class="pb-2">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                          </div>
+                        <h5 class="mb-1">I like ELISHA in the story of BIBLE</h5>
+                        <p class="mb-1">As a prophet,Elisha was political activist and revolutionary. He led a "holy war" that extinguished the house of Omri in Jerusalam as well  as in Samaria(2 Kings 9-10).Though Elisha recruited Jehu to revolt against and succeed Ahab, it was Elijah who ws instructed to anoint Jehu as Isreal's king</p>
+                        <small>The real story of Elisha in the history of  Isreal</small>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- contact form -->
+    <!-- form control, form-label, form-select, input-group, input-group-text -->
+    <section id="contact">
+        <div class="container-lg">
+            <div class="text-center">
+            <h2>Get in touch</h2>
+            <p class="lead">Questions to ask? Fill out the form to contact me directly</p>
+            </div>
+
+            <div class="row justify-content-center my-5">
+                <div class="col-lg-6">
+                    <form>
+                        <label for="email" class="form-label">Email address:</label>
+                        <div class="mb-4 input-group">
+                            <span class="input-group-text">
+                                <i class="bi bi-envelope"></i>
+                            </span>
+                            <input type="text" class="form-control" id="email" placeholder="e.g.seongchunlaw050@gmail.com">
+                            <!-- tooltip -->
+                            <span class="input-group-text">
+                                <span class="tt" data-bs-placement="bottom" title="Enter an email address we can reply to.">
+                                    <i class="bi bi-question-circle text-muted"></i>
+                                </span>
+                            </span>
+                         </div>
+                      
+
+                        <label for="name" class="form-label">Name:</label>
+                        <div class="input-group mb-4">
+                            <span class="input-group-text">
+                                <i class="bi bi-person-fill"></i>
+                            </span>
+                            <input type="text" class="form-control" id="name"placeholder="e.g.Elisha Law Seong Chun">
+                            <!-- tooltip -->
+                            <span class="input-group-text">
+                                <span class="tt" data-bs-placement="bottom" title="Pretty self explanatory really...">
+                                    <i class="bi bi-question-circle text-muted"></i>
+                                </span>
+                            </span>
+                        </div>
+                      
+
+                        <label for="subject" class="form-label">What is your question about...</label>
+                        <div class="input-group mb-4">
+                            <span class="input-group-text">
+                                <i class="bi bi-chat-right-dots-fill"></i>
+                            </span>
+
+                            <select class="form-select" id="subject">
+                                <option value="pricing" selected>danger query</option>
+                                <option value="content">Content query</option>
+                                <option value="other">Other query</option>
+                            </select>
+
+                        </div>
+                       
+
+
+
+                  
+                        <div class="form-floating mb-4 mt-5">
+                            <textarea id="query" class="form-control" style="height:140px;"></textarea>
+                            <label for="query">Your query...</label>
+
+                        </div>
+
+                        <div class="mb-4 text-center">
+                            <button type="button" class="btn btn-secondary">Submit</button>
+                        </div>
+                     
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    
+
+
+    <!-- get updates & modal trigger -->
+    <section class="bg-light">
+        <div class="container">
+            <div class="text-center">
+                <h2>Stay in the Loop</h2>
+                <p class="lead">Get the latest updates as they heppen..</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <p class="text-muted my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quis quas beatae voluptatibus odit voluptate? Ex ad, atque, in minima debitis quas qui quae quod illum nulla distinctio voluptate officia.</p>
+                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#reg-modal">
+                        Register for Updates
+
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- modal itself -->
+    <div class="modal fade" id="reg-modal" tabindex="-1" aria-labellaedby="modal-title" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">Get the Lastest Updates</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla corporis dolorem blanditiis. Omnis et earum praesentium id molestiae ad libero architecto assumenda quisquam. Quam praesentium totam voluptas id, aut ducimus?</p>
+                    <label for="modal-email" class="form-label">Your email address:</label>
+                    <input type="email" class="form-control" id="modal-email" placeholder="e.g.seogchunlaw050@gmail.com">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- offcanvas  -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelldelly="sidebar-label">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="sidebar-label">My journel in GOD's kingdom</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere, vitae. Velit voluptatibus obcaecati cum delectus quaerat aliquid, aut debitis nemo vitae quasi error tenetur est commodi accusantium sed temporibus minima?</p>
+            <!-- dropdown -->
+            <div class="dropdown mt-3">
+                <button class="btn btn secondary dropdown-toggle" type="button" id="The-list-of-Story" data-bs-toggle="dropdown">
+                    Choose a part of MY STORY
+
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="The-list-of-Story">
+                    <li><a href="#" class="dropdown-item">He become a leader or miracle makers </a></li>
+                    <li><a href="#" class="dropdown-item">He was a person who is knows the purpose of GOD </a></li>
+                    <li><a href="#" class="dropdown-item">He knows the calling that GOD had given to him </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script>
+        const tooltips = document.querySelectorAll('.tt')
+        tooltips.forEach(t =>{
+        new bootstrap.Tooltip(t)
+        })
+    </script>
+</body>
+</html>
